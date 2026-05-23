@@ -53,7 +53,6 @@ function DashboardPage() {
 
   return (
     <>
-      <Analytics />
       <MatrixRain />
       <div className="grid-bg" />
       <Scanlines />
@@ -108,26 +107,67 @@ export default function App() {
 
   if (serverError) {
     // Show error boot screen immediately for server errors
-    return <ErrorPage code={serverError} />;
+    return (
+      <>
+        <Analytics />
+        <ErrorPage code={serverError} />
+      </>
+    );
   }
 
   if (isUnmatchedPath) {
     // Show error boot screen for unmatched paths like /admin, /env, etc.
-    return <ErrorPage code="404" />;
+    return (
+      <>
+        <Analytics />
+        <ErrorPage code="404" />
+      </>
+    );
   }
 
   if (isErrorRoute) {
     // Show error boot screen immediately for defined error routes
-    return <ErrorPage code={errorCode} />;
+    return (
+      <>
+        <Analytics />
+        <ErrorPage code={errorCode} />
+      </>
+    );
   }
 
-  if (pathname === '/readme') return <READMEPage />;
+  if (pathname === '/readme') {
+    return (
+      <>
+        <Analytics />
+        <READMEPage />
+      </>
+    );
+  }
 
   // Only show DashboardPage for root path "/"
-  if (pathname === '/' && booted) return <DashboardPage />;
+  if (pathname === '/' && booted) {
+    return (
+      <>
+        <Analytics />
+        <DashboardPage />
+      </>
+    );
+  }
 
-  if (!booted) return <BootScreen onFinish={() => setBooted(true)} />;
+  if (!booted) {
+    return (
+      <>
+        <Analytics />
+        <BootScreen onFinish={() => setBooted(true)} />
+      </>
+    );
+  }
 
   // Should not reach here, but just in case
-  return <ErrorPage code="404" />;
+  return (
+    <>
+      <Analytics />
+      <ErrorPage code="404" />
+    </>
+  );
 }
