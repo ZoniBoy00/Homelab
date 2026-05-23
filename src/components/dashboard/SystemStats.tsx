@@ -20,7 +20,7 @@ export default function SystemStats() {
   }, []);
 
   return (
-    <div className="bg-black/30 border border-cyber-green/10 p-4">
+    <div className="bg-black/30 border border-cyber-green/10 p-3 sm:p-4">
       <SectionHeader title="SYSTEM RESOURCES" />
       <StatBar label="CPU" value={`${cpu}%`} pct={cpu} />
       <StatBar label="RAM" value={`${ram.used}/4.0 GB`} pct={ram.pct} />
@@ -31,8 +31,8 @@ export default function SystemStats() {
 
 function SectionHeader({ title }: { title: string }) {
   return (
-    <div className="flex items-center gap-1.5 mb-3 font-mono text-[0.6rem] text-cyber-dim tracking-widest">
-      <Play className="w-2 h-2 text-cyber-green" />
+    <div className="flex items-center gap-1.5 mb-2 sm:mb-3 font-mono text-xs sm:text-[0.6rem] text-cyber-dim tracking-widest">
+      <Play className="w-1.5 h-1.5 sm:w-2 sm:h-2 text-cyber-green" />
       <h3>{title}</h3>
     </div>
   );
@@ -40,12 +40,12 @@ function SectionHeader({ title }: { title: string }) {
 
 function StatBar({ label, value, pct }: { label: string; value: string; pct: number }) {
   return (
-    <div className="mb-2">
-      <div className="flex justify-between font-mono text-[0.6rem] text-cyber-muted mb-0.5">
+    <div className="mb-2 sm:mb-2">
+      <div className="flex justify-between font-mono text-xs sm:text-[0.6rem] text-cyber-muted mb-0.5">
         <span>{label}</span>
         <span className="text-cyber-text">{value}</span>
       </div>
-      <div className="w-full h-1 bg-white/[0.04] rounded overflow-hidden">
+      <div className="w-full h-1.5 sm:h-2 bg-white/[0.04] rounded overflow-hidden">
         <div className="h-full rounded transition-[width] duration-1000 ease-in" style={{ width: `${pct}%`, background: 'linear-gradient(90deg, #00ff41, #00d4ff)' }} />
       </div>
     </div>

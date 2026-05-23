@@ -58,18 +58,18 @@ function DashboardPage() {
       <Scanlines />
       <CornerDecorations />
 
-      <div className="relative z-[2] w-full max-w-[820px] mx-auto px-8 py-8 my-8 max-sm:px-4 max-sm:my-4">
+      <div className="relative z-[2] w-full max-w-[820px] mx-auto px-4 sm:px-6 md:px-8 py-4 sm:py-6 md:py-8 my-4 sm:my-6 md:my-8">
         <TerminalBar />
         <Header />
 
-        <section className="flex flex-col gap-[0.7rem] my-5">
+        <section className="flex flex-col gap-2 sm:gap-[0.7rem] my-3 sm:my-5">
           {services.map((s, i) => (
             <ServiceCard key={s.id} service={s} index={i} />
           ))}
         </section>
 
         <div
-          className="grid grid-cols-1 md:grid-cols-2 gap-[0.7rem] my-4 animate-fade-in"
+          className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-[0.7rem] my-3 sm:my-4 animate-fade-in"
           style={{ animationDelay: '0.35s', animationFillMode: 'forwards' }}
         >
           <SystemStats />
