@@ -1,5 +1,4 @@
 import { useState, useEffect, useCallback } from 'react';
-import { Analytics } from '@vercel/analytics/react';
 import BootScreen from './components/dashboard/BootScreen';
 import MatrixRain from './components/common/MatrixRain';
 import Scanlines from './components/common/Scanlines';
@@ -53,7 +52,6 @@ function DashboardPage() {
 
   return (
     <>
-      <Analytics />
       <MatrixRain />
       <div className="grid-bg" />
       <Scanlines />
