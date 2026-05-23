@@ -61,28 +61,28 @@ export default function Header() {
         <span className="absolute -inset-0.5 rounded border border-cyber-green animate-pulse-ring opacity-0" />
       </div>
 
-      <div className="flex items-center justify-center gap-2 font-mono text-xs mb-5 min-h-[1.8em]">
+      <div className="flex items-center justify-center gap-2 font-mono text-xs sm:text-xs mb-3 sm:mb-5 min-h-[1.6em] sm:min-h-[1.8em]">
         <span className="text-cyber-green whitespace-nowrap">root@homelab:~$</span>
-        <span className="text-cyber-muted pr-4">{typedText}</span>
+        <span className="text-cyber-muted pr-2 sm:pr-4">{typedText}</span>
         <span className="text-cyber-green animate-cursor-blink text-sm">▊</span>
       </div>
 
-      <div className="mb-2">
-        <h1 className="glitch-text text-[clamp(3rem,10vw,6rem)] font-black tracking-tighter text-cyber-text leading-[1.1]" data-text="HOMELAB">
+      <div className="mb-2 sm:mb-3">
+        <h1 className="glitch-text text-[clamp(2rem,8vw,4rem)] sm:text-[clamp(3rem,10vw,6rem)] font-black tracking-tighter sm:tracking-tighter text-cyber-text leading-[1.1] sm:leading-[1.1]" data-text="HOMELAB">
           HOMELAB
         </h1>
       </div>
 
-      <div className="flex items-center justify-center gap-2 mb-5">
+      <div className="flex items-center justify-center gap-1 sm:gap-2 mb-3 sm:mb-5">
         <span className="text-cyber-green/35 text-xs">│</span>
-        <p className="text-cyber-muted text-xs font-medium tracking-widest font-mono">PRIVATE INFRASTRUCTURE DASHBOARD</p>
+        <p className="text-cyber-muted text-xs sm:text-xs font-medium tracking-widest sm:tracking-widest font-mono">PRIVATE INFRASTRUCTURE DASHBOARD</p>
         <span className="text-cyber-green/35 text-xs">│</span>
       </div>
 
-      <div className="flex justify-center gap-4 md:gap-8 flex-wrap py-3 border-y border-cyber-10">
+      <div className="flex justify-center gap-3 sm:gap-6 md:gap-8 flex-wrap py-2 sm:py-3 border-y border-cyber-10">
         {sysItems.map((item) => (
-          <div key={item.label} className="flex flex-col items-center gap-0.5 min-w-[80px]">
-            <span className="font-mono text-[0.55rem] text-cyber-dim tracking-widest text-center">{item.label}</span>
+          <div key={item.label} className="flex flex-col items-center gap-0.5 min-w-[60px] sm:min-w-[80px]">
+            <span className="font-mono text-[0.5rem] sm:text-[0.55rem] text-cyber-dim tracking-widest text-center">{item.label}</span>
             <div className="w-full text-center">
               {item.value ?? values[item.label]}
             </div>
@@ -90,8 +90,8 @@ export default function Header() {
         ))}
       </div>
 
-      <div className="text-cyber-dim text-[0.55rem] font-mono tracking-widest mt-3">
-        <span>© {new Date().getFullYear()} HOMELAB</span><span className="mx-1.5">·</span><span>v3.1.8</span><span className="mx-1.5">·</span><span>3 ACTIVE NODES</span>
+      <div className="text-cyber-dim text-[0.5rem] sm:text-[0.55rem] font-mono tracking-widest mt-2 sm:mt-3">
+        <span>© {new Date().getFullYear()} HOMELAB</span><span className="mx-1 sm:mx-1.5">·</span><span>v3.1.8</span><span className="mx-1 sm:mx-1.5">·</span><span>3 ACTIVE NODES</span>
       </div>
     </header>
   );

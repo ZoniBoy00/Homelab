@@ -12,6 +12,7 @@
     min-height: 100vh;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
+    touch-action: manipulation;
   }
 
   ::-webkit-scrollbar { width: 4px; }
@@ -22,6 +23,83 @@
   *:focus-visible {
     outline: 1px solid #00ff41;
     outline-offset: 2px;
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  /* Touch-friendly tap targets */
+  a, button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Prevent text scaling on mobile */
+  body {
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  
+  /* Better mobile scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #4a4a4a;
+    border-radius: 3px;
+  }
+  
+  /* Prevent double-tap zoom */
+  * {
+    touch-action: manipulation;
+  }
+}
+
+/* Mobile-first approach */
+@media (max-width: 475px) {
+  /* Ultra compact mode */
+  .glitch-text {
+    font-size: clamp(1.5rem, 6vw, 2.5rem) !important;
+  }
+  
+  /* Smaller padding */
+  .animate-fade-in {
+    padding: 1rem !important;
+  }
+  
+  /* Reduce animation intensity on mobile */
+  .animate-pulse-ring {
+    animation-duration: 3s !important;
+  }
+  
+  .animate-cursor-blink {
+    animation-duration: 1s !important;
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Improved mobile hover states */
+@media (hover: none) {
+  .group:hover > * {
+    transform: none !important;
+  }
+  
+  a:hover {
+    transform: none !important;
+  }
+  
+  /* Use active states instead of hover */
+  .group:active > * {
+    transform: scale(0.98) !important;
   }
 }
 

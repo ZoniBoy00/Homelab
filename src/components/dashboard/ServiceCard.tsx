@@ -48,7 +48,7 @@ export default function ServiceCard({ service, index }: Props) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`Open ${service.name} — ${service.description}`}
-      className="group relative flex flex-col bg-black/35 border border-cyber-green/10 no-underline text-inherit cursor-pointer overflow-hidden transition-all duration-300 hover:-translate-y-0.5"
+      className="group relative flex flex-col bg-black/35 border border-cyber-green/10 no-underline text-inherit cursor-pointer overflow-hidden transition-all duration-300 hover:-translate-y-0.5 sm:hover:-translate-y-1"
       style={{ animation: `card-in 0.6s ease-out backwards`, animationDelay: `${0.1 + index * 0.1}s` }}
       onMouseEnter={showPing}
     >
@@ -57,57 +57,57 @@ export default function ServiceCard({ service, index }: Props) {
         style={{ background: `linear-gradient(135deg, ${service.accentDim}, transparent 65%)` }}
       />
 
-      <div className="flex items-center justify-between px-5 pt-3">
+      <div className="flex items-center justify-between px-3 sm:px-5 pt-3 sm:pt-4">
         <div
-          className="w-8 h-8 flex items-center justify-center transition-all duration-300 group-hover:drop-shadow-[0_0_10px_var(--accent)] group-hover:scale-110"
+          className="w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center transition-all duration-300 group-hover:drop-shadow-[0_0_10px_var(--accent)] group-hover:scale-110"
           style={{ color: service.accent }}
         >
           {icons[service.id]}
         </div>
         <span
-          className="font-mono text-[0.5rem] text-cyber-dim tracking-widest px-2 py-1 border border-white/5 rounded-sm transition-colors duration-300 group-hover:border-[--accent] group-hover:text-[--accent]"
+          className="font-mono text-xs sm:text-[0.5rem] text-cyber-dim tracking-widest px-2 py-1 border border-white/5 rounded-sm transition-colors duration-300 group-hover:border-[--accent] group-hover:text-[--accent]"
           style={{ '--accent': service.accent } as React.CSSProperties}
         >
           {service.tag}
         </span>
       </div>
 
-      <div className="px-5 pb-4 pt-1.5 relative z-[1]">
-        <h2 className="text-sm font-bold text-cyber-text tracking-wider">{service.name}</h2>
+      <div className="px-3 sm:px-5 pb-3 sm:pb-4 pt-1.5 relative z-[1]">
+        <h2 className="text-xs sm:text-sm font-bold text-cyber-text tracking-wider">{service.name}</h2>
 
-        <div className="flex items-center gap-2 mt-0.5 mb-1">
+        <div className="flex items-start gap-2 sm:gap-2 mt-0.5 mb-1 flex-wrap">
           <span
-            className="font-mono text-[0.55rem] text-cyber-dim cursor-pointer transition-colors duration-200 hover:text-cyber-text relative"
+            className="font-mono text-[0.5rem] sm:text-[0.55rem] text-cyber-dim cursor-pointer transition-colors duration-200 hover:text-cyber-text relative flex-1 min-w-0"
             onClick={copy}
             title="Click to copy"
           >
-            {service.protocol}
+            <span className="truncate block">{service.protocol}</span>
             {copied && (
-              <span className="absolute -top-4 left-0 text-[0.5rem] text-cyber-green whitespace-nowrap animate-fade-in">
+              <span className="absolute -top-3 sm:-top-4 left-0 text-[0.5rem] text-cyber-green whitespace-nowrap animate-fade-in">
                 copied!
               </span>
             )}
           </span>
-          <span className="font-mono text-[0.5rem] opacity-50" style={{ color: service.accent }}>
+          <span className="font-mono text-[0.5rem] sm:text-[0.5rem] opacity-50 flex-shrink-0" style={{ color: service.accent }}>
             {service.type}
           </span>
         </div>
 
-        <p className="text-xs text-cyber-muted">{service.description}</p>
+        <p className="text-xs text-cyber-muted leading-relaxed">{service.description}</p>
 
-        <div className="flex items-center justify-between mt-2.5">
-          <span className="flex items-center gap-1.5 font-mono text-[0.6rem]">
-            <span className="relative flex h-2 w-2">
+        <div className="flex items-center justify-between mt-2 sm:mt-2.5">
+          <span className="flex items-center gap-1.5 font-mono text-[0.5rem] sm:text-[0.6rem]">
+            <span className="relative flex h-1.5 sm:h-2 w-1.5 sm:w-2">
               <span className="absolute inline-flex h-full w-full rounded-full bg-cyber-green opacity-75 animate-ping" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-cyber-green" />
+              <span className="relative inline-flex h-1.5 sm:h-2 w-1.5 sm:w-2 rounded-full bg-cyber-green" />
             </span>
             <span className="text-cyber-green">ONLINE</span>
             {ping !== null && (
-              <span className="text-cyber-dim ml-1 text-[0.5rem]">{ping}ms</span>
+              <span className="text-cyber-dim ml-1 text-[0.4rem] sm:text-[0.5rem]">{ping}ms</span>
             )}
           </span>
           <span
-            className="text-base text-cyber-dim transition-all duration-300 group-hover:text-[--accent] group-hover:translate-x-1"
+            className="text-sm sm:text-base text-cyber-dim transition-all duration-300 group-hover:text-[--accent] group-hover:translate-x-1"
             style={{ '--accent': service.accent } as React.CSSProperties}
           >
             →

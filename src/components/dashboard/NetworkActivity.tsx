@@ -17,14 +17,14 @@ export default function NetworkActivity() {
   }, []);
 
   return (
-    <div className="bg-black/30 border border-cyber-green/10 p-4">
-      <div className="flex items-center gap-1.5 mb-3 font-mono text-[0.6rem] text-cyber-dim tracking-widest">
-        <Play className="w-2 h-2 text-cyber-green" />
+    <div className="bg-black/30 border border-cyber-green/10 p-3 sm:p-4">
+      <div className="flex items-center gap-1.5 mb-2 sm:mb-3 font-mono text-xs sm:text-[0.6rem] text-cyber-dim tracking-widest">
+        <Play className="w-1.5 h-1.5 sm:w-2 sm:h-2 text-cyber-green" />
         <h3>NETWORK ACTIVITY</h3>
       </div>
-      <div className="flex items-end gap-[2px] h-10 mb-2">
+      <div className="flex items-end gap-1 sm:gap-[2px] h-16 sm:h-10 mb-2">
         {bars.map((h, i) => (
-          <div key={i} className="flex-1 min-w-[3px] rounded-t transition-all duration-500 ease-out"
+          <div key={i} className="flex-1 min-w-[2px] sm:min-w-[3px] rounded-t transition-all duration-500 ease-out"
             style={{
               height: `${h}%`,
               background: h > 70 ? 'linear-gradient(to top, #00ff41, #00d4ff)' : h > 40 ? '#00ff41' : 'rgba(0,255,65,0.4)',
@@ -33,10 +33,10 @@ export default function NetworkActivity() {
           />
         ))}
       </div>
-      <div className="flex justify-between font-mono text-[0.55rem] text-cyber-muted">
+      <div className="flex justify-between font-mono text-xs sm:text-[0.55rem] text-cyber-muted">
         <span>↓ {rx} KB/s</span>
         <span>↑ {tx} KB/s</span>
-        <span><Bolt className="w-2.5 h-2.5 inline-block align-middle mr-0.5" />{conn} conn</span>
+        <span><Bolt className="w-1.5 h-1.5 sm:w-2.5 sm:h-2.5 inline-block align-middle mr-0.5" />{conn} conn</span>
       </div>
     </div>
   );
