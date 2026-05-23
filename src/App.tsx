@@ -106,67 +106,26 @@ export default function App() {
 
   if (serverError) {
     // Show error boot screen immediately for server errors
-    return (
-      <>
-        <Analytics />
-        <ErrorPage code={serverError} />
-      </>
-    );
+    return <ErrorPage code={serverError} />;
   }
 
   if (isUnmatchedPath) {
     // Show error boot screen for unmatched paths like /admin, /env, etc.
-    return (
-      <>
-        <Analytics />
-        <ErrorPage code="404" />
-      </>
-    );
+    return <ErrorPage code="404" />;
   }
 
   if (isErrorRoute) {
     // Show error boot screen immediately for defined error routes
-    return (
-      <>
-        <Analytics />
-        <ErrorPage code={errorCode} />
-      </>
-    );
+    return <ErrorPage code={errorCode} />;
   }
 
-  if (pathname === '/readme') {
-    return (
-      <>
-        <Analytics />
-        <READMEPage />
-      </>
-    );
-  }
+  if (pathname === '/readme') return <READMEPage />;
 
   // Only show DashboardPage for root path "/"
-  if (pathname === '/' && booted) {
-    return (
-      <>
-        <Analytics />
-        <DashboardPage />
-      </>
-    );
-  }
+  if (pathname === '/' && booted) return <DashboardPage />;
 
-  if (!booted) {
-    return (
-      <>
-        <Analytics />
-        <BootScreen onFinish={() => setBooted(true)} />
-      </>
-    );
-  }
+  if (!booted) return <BootScreen onFinish={() => setBooted(true)} />;
 
   // Should not reach here, but just in case
-  return (
-    <>
-      <Analytics />
-      <ErrorPage code="404" />
-    </>
-  );
+  return <ErrorPage code="404" />;
 }
