@@ -24,6 +24,8 @@ const KEYMAP: Record<string, string> = {
   j: services[0].url,
   u: services[1].url,
   c: services[2].url,
+  d: services[3].url,
+  b: services[4].url,
 };
 
 const ERROR_ROUTES: Record<string, () => JSX.Element> = {

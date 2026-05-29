@@ -26,6 +26,8 @@ Visit the live dashboard at: **`https://homelab.cfd/readme`**
 | Jellyfin | `jelly.homelab.cfd:443` | Media streaming · movies, TV series & music |
 | UptimeMon | `uptime.homelab.cfd:443` | Service monitoring · real-time status & latency |
 | CasaOS | `casa.homelab.cfd:443` | Server management · system control & apps |
+| Twitch Drops | `twitch-drops.homelab.cfd:443` | AFK drop miner · auto-claim Tarkov drops |
+| Byte Dashboard | `byte.homelab.cfd:443` | AI assistant dashboard · Hermes agent control |
 
 ## Features
 
@@ -124,6 +126,8 @@ The `vercel.json` handles SPA rewrites; `/404.html` from `public/` is auto-serve
 | `J` | Open Jellyfin |
 | `U` | Open UptimeMon |
 | `C` | Open CasaOS |
+| `D` | Open Twitch Drops |
+| `B` | Open Byte Dashboard |
 
 ## Project Structure
 
