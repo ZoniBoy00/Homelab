@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useUptime } from '../../hooks/useUptime';
 import { useTypingAnimation } from '../../hooks/useTypingAnimation';
-import { typingCommands } from '../../data/services';
+import { typingCommands, services } from '../../data/services';
 import { Hexagon } from '../common/Icons';
 
 function useClock() {
@@ -37,7 +37,7 @@ const sysItems = [
   { label: 'STATUS', value: <span className="text-xs font-medium text-cyber-green animate-blink flex items-center justify-center gap-1"><span className="w-1.5 h-1.5 rounded-full bg-cyber-green inline-block" />ONLINE</span> },
   { label: 'UPTIME', value: null },
   { label: 'CLOCK', value: null },
-  { label: 'NODES', value: <span className="text-xs font-mono text-cyber-text text-center block w-full">3 ACTIVE</span> },
+  { label: 'NODES', value: <span className="text-xs font-mono text-cyber-text text-center block w-full">{services.length} ACTIVE</span> },
   { label: 'NETWORK', value: null },
 ];
 
@@ -91,7 +91,7 @@ export default function Header() {
       </div>
 
       <div className="text-cyber-dim text-[0.5rem] sm:text-[0.55rem] font-mono tracking-widest mt-2 sm:mt-3">
-        <span>© {new Date().getFullYear()} HOMELAB</span><span className="mx-1 sm:mx-1.5">·</span><span>v3.1.8</span><span className="mx-1 sm:mx-1.5">·</span><span>3 ACTIVE NODES</span>
+        <span>© {new Date().getFullYear()} HOMELAB</span><span className="mx-1 sm:mx-1.5">·</span><span>v3.1.8</span><span className="mx-1 sm:mx-1.5">·</span><span>{services.length} ACTIVE NODES</span>
       </div>
     </header>
   );

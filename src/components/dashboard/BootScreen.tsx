@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Hexagon } from '../common/Icons';
+import { services } from '../../data/services';
 
 interface BootLine {
   text: string;
@@ -17,7 +18,7 @@ const bootSequence: BootLine[] = [
   { text: 'Started Network Manager.', status: 'ok' },
   { text: 'Started homelab-dashboard.service — Homelab Infrastructure Dashboard', status: 'ok' },
   { text: 'Reached target multi-user.target.', status: 'ok' },
-  { text: 'homelab-dashboard: ready (3 active nodes, 7 containers)', status: 'done' },
+  { text: `homelab-dashboard: ready (${services.length} active nodes, 7 containers)`, status: 'done' },
 ];
 
 function fmtKernTimestamp(n: number): string {
