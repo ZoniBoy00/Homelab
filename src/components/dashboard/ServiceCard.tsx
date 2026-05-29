@@ -22,6 +22,16 @@ const icons: Record<Service['id'], React.ReactNode> = {
       <path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z" /><path d="M9 21V12h6v9" /><path d="M12 3v6" />
     </svg>
   ),
+  'twitch-drops': (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-5 h-5">
+      <path d="M21 12L12 3l-4 4-4-4-1 1v12l5 5 4-4 4 4 5-5V4l-1-1z" /><path d="M12 3v9" /><path d="M9 9l3 3 3-3" />
+    </svg>
+  ),
+  byte: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-5 h-5">
+      <circle cx="12" cy="12" r="9" /><path d="M12 8v4l2 2" /><path d="M8 12h8" /><path d="M12 6v2" />
+    </svg>
+  ),
 };
 
 export default function ServiceCard({ service, index }: Props) {
