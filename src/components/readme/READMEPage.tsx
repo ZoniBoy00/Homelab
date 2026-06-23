@@ -1,6 +1,4 @@
-import React from 'react';
 import MatrixRain from '../common/MatrixRain';
-import Scanlines from '../common/Scanlines';
 import CornerDecorations from '../common/CornerDecorations';
 import TerminalBar from '../layout/TerminalBar';
 

@@ -1,7 +1,5 @@
-import type { ReactNode } from 'react';
 import { useState } from 'react';
 import MatrixRain from '../common/MatrixRain';
-import Scanlines from '../common/Scanlines';
 import CornerDecorations from '../common/CornerDecorations';
 import ErrorBootScreen from './ErrorBootScreen';
 
