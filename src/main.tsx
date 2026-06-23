@@ -6,7 +6,7 @@ import './index.css';
 
 // ── CONSOLE EASTER EGG ──
 console.log(
-  '%c ⬡ HOMELAB DASHBOARD v3.1.8 ',
+  '%c ⬡ HOMELAB DASHBOARD v3.2.0 ',
   'background:#0a0a0a; color:#00ff41; font-size:14px; font-weight:bold; padding:8px 12px; border:1px solid #00ff41;'
 );
 console.log(

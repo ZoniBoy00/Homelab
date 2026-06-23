@@ -91,7 +91,7 @@ export default function Header() {
       </div>
 
       <div className="text-cyber-dim text-[0.5rem] sm:text-[0.55rem] font-mono tracking-widest mt-2 sm:mt-3">
-        <span>© {new Date().getFullYear()} HOMELAB</span><span className="mx-1 sm:mx-1.5">·</span><span>v3.1.8</span><span className="mx-1 sm:mx-1.5">·</span><span>{services.length} ACTIVE NODES</span>
+        <span>© {new Date().getFullYear()} HOMELAB</span><span className="mx-1 sm:mx-1.5">·</span><span>v3.2.0</span><span className="mx-1 sm:mx-1.5">·</span><span>{services.length} ACTIVE NODES</span>
       </div>
     </header>
   );

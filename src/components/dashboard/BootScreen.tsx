@@ -61,7 +61,7 @@ export default function BootScreen({ onFinish }: { onFinish: () => void }) {
       <div className="w-full max-w-[600px] px-6">
         <div className="mb-5 flex items-center gap-2 font-mono text-[0.55rem] text-cyber-dim tracking-widest">
           <Hexagon className="w-2.5 h-2.5 text-cyber-green" />
-          <span>HOMELAB v3.1.8 — booting</span>
+          <span>HOMELAB v3.2.0 — booting</span>
           <span className="flex-1" />
           <span className="text-cyber-dim">{Math.floor(progress * 100)}%</span>
         </div>

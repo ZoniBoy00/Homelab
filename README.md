@@ -1,7 +1,7 @@
 ```text
 
   ╔══════════════════════════════════════════════╗
-  ║          ⬡ HOMELAB DASHBOARD v3.1.8          ║
+  ║          ⬡ HOMELAB DASHBOARD v3.2.0          ║
   ║     Private Infrastructure Dashboard         ║
   ╚══════════════════════════════════════════════╝
 
@@ -80,7 +80,7 @@ All error pages use a shared `ErrorPage` base component with matrix rain, CRT ef
 |-------|-----------|
 | Framework | React 18 |
 | Language | TypeScript 5.9 |
-| Build | Vite 6 |
+| Build | Vite 8 |
 | Styles | Tailwind CSS 3 |
 | Analytics | @vercel/analytics |
 | Fonts | Inter + JetBrains Mono (Google Fonts) |
@@ -165,6 +165,7 @@ src/
 │   └── readme/               # README page component
 │       └── READMEPage.tsx        # Themed README page with navigation
 ├── hooks/
+│   ├── useInterval.ts         # Stable setInterval hook
 │   ├── useUptime.ts           # Live uptime counter hook
 │   └── useTypingAnimation.ts  # Typewriter typing/deleting animation hook
 ├── data/
@@ -180,6 +181,7 @@ public/
 └── 503.html                   # Minimal JS redirect → React error page
 
 vercel.json                    # SPA rewrites configuration
+.env.example                  # Environment variable template
 ```
 
 ## Git
@@ -187,7 +189,7 @@ vercel.json                    # SPA rewrites configuration
 ```bash
 git init
 git add .
-git commit -m "feat: add README page and improve routing v3.1.8"
+git commit -m "feat: upgrade to Vite 8.1.0 and strict TypeScript v3.2.0"
 ```
 
 The project includes a `.gitignore` pre-configured for Node, Vite, and common OS/IDE artifacts. No `node_modules`, `dist/`, or build artifacts are tracked.

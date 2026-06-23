@@ -16,7 +16,7 @@ export default function READMEPage() {
           <div className="px-8 py-8 max-sm:px-6 max-sm:py-6">
             <div className="mb-8">
               <h1 className="text-3xl font-bold tracking-tight mb-4 text-cyber-text">
-                ⬡ README v3.1.8
+                ⬡ README v3.2.0
               </h1>
               <p className="text-cyber-muted mb-6">
                 A cyber/terminal-themed dashboard for managing homelab services. Built with React 18, TypeScript, and Tailwind CSS 3.
@@ -189,7 +189,7 @@ export default function READMEPage() {
               <span className="text-cyber-green animate-cursor-blink">_</span>
             </div>
             <div className="text-cyber-dim text-[0.5rem] font-mono tracking-widest mt-1.5 text-center">
-              © {new Date().getFullYear()} HOMELAB — DASHBOARD v3.1.8
+              © {new Date().getFullYear()} HOMELAB — DASHBOARD v3.2.0
             </div>
           </div>
         </div>
